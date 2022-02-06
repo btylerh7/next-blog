@@ -13,7 +13,7 @@ interface Props {
 
 function Post({ post }: Props) {
   return (
-    <>
+    <div className="px-6">
       <Header />
       <main>
         <img
@@ -39,12 +39,17 @@ function Post({ post }: Props) {
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
               content={post.body}
+              serializers={{
+                h1: ({children}:any) => <h1 className="text-3xl font-bold my-4">{children}</h1>,
+                h2: ({children}:any) => <h2 className="text-3xl font-bold my-4">{children}</h2>,
+                normal: ({children}:any) => <p className="text-xl py-2">{children}</p>
+              }}
             />
           </div>
         </article>
         <hr className="max-w-lg mx-auto border border-black my-5" />
       </main>
-    </>
+    </div>
   );
 }
 

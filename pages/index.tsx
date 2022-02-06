@@ -12,20 +12,20 @@ interface Props {
 
 export default function Home({ posts }: Props) {
   return (
-    <div className="app">
+    <div className="px-6">
       <Head>
         <title>My Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <Intro />
-      <div className="posts py-10 mx-auto max-w-7xl">
+      <div className="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-3 gap-4 py-5 md:py-10 mx-auto max-w-7xl">
         {posts.map((post) => (
           <Link key={post._id} href={`/posts/${post.slug.current}`}>
-            <div className='post-card'>
+            <div className='justify-center cursor-pointer border rounded-md border-black max-w-md shadow-lg'>
               <img src={urlFor(post.mainImage).url()!} alt={`Post image for ${post.title}`} />
-            <div>
-              <h3>{post.title} by {post.author.name}</h3>
+            <div className='p-4'>
+              <h3>{post.title}</h3>
               <p>{post.description}</p>
             </div>
             </div>
@@ -37,7 +37,7 @@ export default function Home({ posts }: Props) {
 }
 
 export const getServerSideProps = async () => {
-  const query = `*[_type == 'post']{
+  const query = `*[_type == 'post'] | order(publishedAt desc) {
     _id,
     title,
     description,

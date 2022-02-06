@@ -3,7 +3,7 @@ import Header from '../../components/Header';
 
 function About() {
   return (
-      <>
+      <div className="px-6">
         <Header />
         <main className="max-w-2xl mx-auto space-y-5">
             <h1>Committed to becoming better all the time.</h1>
@@ -14,7 +14,7 @@ function About() {
             <p>That's what I intend to do. And I am going to take you on that journey with me.</p>
             <p>Join me, and let's make the world a better place for the future.</p>
         </main>
-    </>
+    </div>
       
   );
 }
