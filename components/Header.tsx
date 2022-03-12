@@ -20,7 +20,7 @@ function Header() {
         <h3 className="cursor-pointer">Contact</h3>
         </Link>
         <Link href="/">
-          <h3 className="text-white rounded-full px-4 py-1 cursor-pointer bg-green-600">Blog</h3>
+          <h3 className="btn">Blog</h3>
         </Link>
       </div>
       <div onClick={() => {setShowHeader(showHeader === true ? false : true)}} className="md:hidden">

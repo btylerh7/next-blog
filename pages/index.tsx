@@ -12,23 +12,25 @@ interface Props {
 
 export default function Home({ posts }: Props) {
   return (
-    <div className="px-6">
+    <div className="page-wrapper">
       <Head>
         <title>My Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Intro />
-      <div className="grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-3 gap-4 py-5 md:py-10 mx-auto max-w-7xl">
+      {/* <Intro /> */}
+      <div className="blog-home-wrapper">
         {posts.map((post) => (
           <Link key={post._id} href={`/posts/${post.slug.current}`}>
-            <div className='justify-center cursor-pointer border rounded-md border-black max-w-md shadow-lg'>
+            {/* justify-center cursor-pointer border rounded-md border-black max-w-md shadow-lg */}
+            <div className='blog-wrapper'>
               <img src={urlFor(post.mainImage).url()!} alt={`Post image for ${post.title}`} />
-            <div className='p-4'>
+            <div>
               <h3>{post.title}</h3>
               <p>{post.description}</p>
+            </div><hr />
             </div>
-            </div>
+            
           </Link>
         ))}
       </div>
