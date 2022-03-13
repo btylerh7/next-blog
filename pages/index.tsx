@@ -22,17 +22,20 @@ export default function Home({ posts }: Props) {
       {/* <Intro /> */}
       <div className="blog-home-wrapper">
         {posts.map((post) => (
-          <Link key={post._id} href={`/posts/${post.slug.current}`}>
+          <div>
             {/* justify-center cursor-pointer border rounded-md border-black max-w-md shadow-lg */}
             <div className='blog-wrapper'>
               <img src={urlFor(post.mainImage).url()!} alt={`Post image for ${post.title}`} />
             <div>
               <h3>{post.title}</h3>
               <p>{post.description}</p>
+              <Link key={post._id} href={`/posts/${post.slug.current}`}>
+                <h4 style={{textAlign: "center", maxWidth: "150px"}} className="btn">Read More</h4>
+              </Link>
             </div>
             </div>
             
-          </Link>
+          </div>
         ))}
       </div>
       </main>
