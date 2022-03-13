@@ -25,11 +25,11 @@ export default function Home({ posts }: Props) {
           <Link key={post._id} href={`/posts/${post.slug.current}`}>
             {/* justify-center cursor-pointer border rounded-md border-black max-w-md shadow-lg */}
             <div className='blog-wrapper'>
-              <img style={{maxWidth: "200px"}} src={urlFor(post.mainImage).url()!} alt={`Post image for ${post.title}`} />
+              <img src={urlFor(post.mainImage).url()!} alt={`Post image for ${post.title}`} />
             <div>
               <h3>{post.title}</h3>
               <p>{post.description}</p>
-            </div><hr />
+            </div>
             </div>
             
           </Link>
