@@ -20,7 +20,7 @@ function Post({ post }: Props) {
           src={urlFor(post.mainImage).url()!}
           alt={`Post image for ${post.title}`}
         />
-        <main className="page-wrapper">
+        <main className="single-page-wrapper">
         <article className="mx-auto p-5 max-w-5xl">
           <h1>{post.title}</h1>
           <div style={{display: "flex", alignItems:"center"}}>

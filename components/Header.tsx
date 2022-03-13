@@ -9,7 +9,7 @@ function Header() {
       <div className="header">
       <div>
         <Link href="/">
-          <h2 style={{margin: "0",lineHeight: "1"}} className="w-48 object-contain cursor-pointer">Tyler Baker</h2>
+          <h2 style={{fontSize: "2rem", margin: "0",lineHeight: "1"}} className="w-52 object-contain cursor-pointer">Tyler Baker</h2>
         </Link>
       </div>
       <div className="hidden md:inline-flex items-center space-x-10">

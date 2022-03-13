@@ -1,15 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     color: #ffffff;
     box-sizing: border-box;
-    font-family: 'Poppins, sans-serif'
+    font-family: "Poppins", sans-serif;
 }
 
 :root {
@@ -41,9 +40,19 @@ h3 {
     margin-bottom: 1rem;
 }
 
+p {
+    font-family: "Lato", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
 /* Layout components */
 .page-wrapper, .header-wrapper {
     padding-inline: 1.5rem;
+}
+.single-page-wrapper {
+    padding-inline: 0.75rem;
 }
 
 .blog-home-wrapper {
@@ -104,10 +113,7 @@ h3 {
     max-width: 30rem;
     cursor: pointer;
 }
-.article {
-    display: flex;
-    gap: .2rem;
-}
+
 
 .post-image {
     width: 100%;
@@ -120,12 +126,6 @@ h3 {
     margin-right: 0.75rem;
     object-fit: cover;
     border-radius: 9999px;
-}
-
-.portable-text {
-    font-size: 1.25rem;
-    line-height: 1.25;
-    margin-bottom: 2rem;
 }
 /* Layout media queries */
 @media (min-width: 768px) { /* medium screen size */
