@@ -12,19 +12,20 @@ interface Props {
 
 export default function Home({ posts }: Props) {
   return (
-    <div className="page-wrapper">
+    <div>
       <Head>
         <title>My Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <main className="page-wrapper">
       {/* <Intro /> */}
       <div className="blog-home-wrapper">
         {posts.map((post) => (
           <Link key={post._id} href={`/posts/${post.slug.current}`}>
             {/* justify-center cursor-pointer border rounded-md border-black max-w-md shadow-lg */}
             <div className='blog-wrapper'>
-              <img src={urlFor(post.mainImage).url()!} alt={`Post image for ${post.title}`} />
+              <img style={{maxWidth: "200px"}} src={urlFor(post.mainImage).url()!} alt={`Post image for ${post.title}`} />
             <div>
               <h3>{post.title}</h3>
               <p>{post.description}</p>
@@ -34,6 +35,7 @@ export default function Home({ posts }: Props) {
           </Link>
         ))}
       </div>
+      </main>
     </div>
   )
 }

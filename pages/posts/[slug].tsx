@@ -13,19 +13,19 @@ interface Props {
 
 function Post({ post }: Props) {
   return (
-    <div className="px-6">
+    <div>
       <Header />
-      <main>
         <img
-          className="w-full h-40 object-cover"
+          className="post-image"
           src={urlFor(post.mainImage).url()!}
           alt={`Post image for ${post.title}`}
         />
+        <main className="page-wrapper">
         <article className="mx-auto p-5 max-w-5xl">
           <h1>{post.title}</h1>
-          <div className="flex items-center">
+          <div style={{display: "flex", alignItems:"center"}}>
             <img
-              className="h-10 w-10 object-cover rounded-full mr-3"
+              className="author-image"
               src={urlFor(post.author.image).url()!}
               alt={`${post.author.name}, post author`}
             />
@@ -40,9 +40,11 @@ function Post({ post }: Props) {
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
               content={post.body}
               serializers={{
-                h1: ({children}:any) => <h1 className="text-3xl font-bold my-4">{children}</h1>,
-                h2: ({children}:any) => <h2 className="text-3xl font-bold my-4">{children}</h2>,
-                normal: ({children}:any) => <p className="text-xl py-2">{children}</p>
+                // h1: ({children}:any) => <h1 className="text-4xl font-bold my-4">{children}</h1>,
+                h2: ({children}:any) => <h2 className="portable-heading">{children}</h2>,
+                normal: ({children}:any) => <p className="portable-text">{children}</p>,
+                // image: ({children}:any) => <img style={{maxWidth:"300px"}} />,
+
               }}
             />
           </div>
