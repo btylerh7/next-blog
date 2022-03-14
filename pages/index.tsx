@@ -12,30 +12,13 @@ interface Props {
 
 export default function Home({ posts }: Props) {
   return (
-    <div>
+    <>
       <Head>
         <title>My Blog</title>
         <link rel="icon" href="/favicon.ico" />
           <meta charSet="UTF-8" />
-          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
-            });
-          `,
-            }}
-          />
 
       </Head>
       <Header />
@@ -60,7 +43,7 @@ export default function Home({ posts }: Props) {
         ))}
       </div>
       </main>
-    </div>
+    </>
   )
 }
 

@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@bradgarropy/next-google-analytics": "^1.0.2",
     "@sanity/cli": "^2.28.0",
     "express": "^4.17.2",
     "global": "^4.4.0",
